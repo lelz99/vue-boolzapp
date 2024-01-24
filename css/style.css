@@ -8,10 +8,6 @@
     align-items: center;
 }
 
-.box{
-    height: 90vh;
-    width: 1280px;
-}
 
 img{
     width: 50px;
@@ -87,4 +83,14 @@ header{
 #send-message{
     height: 70px;
     background-color: #f3eeea;
+}
+
+.form-control{
+    padding: 12px
+}
+
+#send-message i{
+    font-size: 25px;
+    margin: 0 20px;
+    color: #6b7376;
 }
