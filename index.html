@@ -12,7 +12,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 
-    
+
     <!-- Vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
     <!-- Javscript -->
@@ -22,7 +22,34 @@
 </head>
 <body>
     <div id="root">
-
+        <div class="box row">
+            <div class="left-side col-4 border-end border-primary p-0 row flex-column ">
+                <div class="col-12" id="header-left"></div>
+                <div class="col-12" id="notifications"></div>
+                <div class="col-12" id="search-bar" class="border-bottom"></div>
+                <div class="col-12" id="chat" class="">
+                    <ul>
+                        <li>lorem</li>
+                        <li>lorem</li>
+                        <li>lorem</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="right-side col-8 p-0">
+                <header class="p-2">
+                    <div class="d-flex align-items-center">
+                        <img src="img/avatar_1.jpg" alt="">
+                        <div>
+                            <h2 class="h6 m-0">Michele</h2>
+                            <p class="m-0">Ultimo accesso oggi alle</p>
+                        </div>
+                    </div>
+                </header>
+                <section id="conversation-box" class="">
+                </section>
+                <section id="send-message" class=""></section>
+            </div>
+        </div>
     </div>
 </body>
 </html>
