@@ -1,3 +1,4 @@
+/* Generics */
 #root{
     height: 100vh;
     background-image: linear-gradient(#009688 150px, #dcdbd3 0);
@@ -7,34 +8,39 @@
     align-items: center;
 }
 
-/* Generics */
-
 .box{
     height: 90vh;
-    width: 1000px;
+    width: 1280px;
 }
 
 img{
     width: 50px;
     border-radius: 25px;
+    border: 0;
     display: block;
     background-color: black;
-    margin-right: 10px;
-    margin-top: 5px;
+    margin-right: 5px;
+
 }
 
+ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+li{
+    margin: 0 10px;
+}
+
+li > i{
+    color: #b1b1b1;
+}
 
 header{
     height: 80px;
     background-color: #eaeaea;
 }
-
-/* Utilities */
-
-.my-border{
-    border: 1px solid black
-}
-
 
 /* Left Side */
 
@@ -55,7 +61,6 @@ header{
 }
 
 
-
 /* Right Side */
 
 .right-side header{
@@ -63,8 +68,8 @@ header{
     background-color: #eaeaea;
 }
 
-p{
-    font-size: 0.7rem;
+.right-side p{
+    font-size: 0.8rem;
     margin: 0;
 }
 

@@ -23,9 +23,21 @@
 <body>
     <div id="root">
         <div class="box container row">
-            <div class="left-side col-4 border-end border-primary p-0 ">
-                <header class="d-flex justify-content-between p-2">
 
+            <!-- Left Side -->
+            <div class="left-side col-4 border-end border-primary p-0">
+
+                <!-- Left Header -->
+                <header class="d-flex justify-content-between p-2">
+                    <div class="d-flex align-items-center">
+                        <img :src="`img/${user.avatar}`" alt="{{user.name}}">
+                        <h2 class="h6 m-0">{{user.name}}</h2>
+                    </div>
+                    <ul class="d-flex align-items-center ">
+                        <li><i class="fa-solid fa-magnifying-glass fa-xl"></i></li>
+                        <li><i class="fa-solid fa-message fa-xl"></i></li>
+                        <li><i class="fa-solid fa-ellipsis-vertical fa-xl"></i></li>
+                    </ul>
                 </header>
                 <section id="notifications"></section>
                 <section id="search-bar"></section>
@@ -37,15 +49,24 @@
                     </ul>
                 </section>
             </div>
+
+            <!-- Right Side-->
             <div class="right-side col-8 p-0">
-                <header class="p-2">
+
+                <!-- Right Header -->
+                <header class="d-flex justify-content-between p-2">
                     <div class="d-flex align-items-center">
-                        <img src="img/avatar_1.jpg" alt="">
+                        <img src="img/avatar_1.jpg" alt="{{user.name}}">
                         <div>
                             <h2 class="h6 m-0">Michele</h2>
-                            <p class="m-0">Ultimo accesso oggi alle</p>
+                            <p class="text-secondary">Utlimo accesso oggi alle: </p>
                         </div>
                     </div>
+                    <ul class="d-flex align-items-center ">
+                        <li><i class="fa-solid fa-magnifying-glass fa-xl"></i></li>
+                        <li><i class="fa-solid fa-paperclip fa-xl"></i></li>
+                        <li><i class="fa-solid fa-ellipsis-vertical fa-xl"></i></li>
+                    </ul>
                 </header>
                 <section id="conversation-box" class="">
                 </section>
