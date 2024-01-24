@@ -28,6 +28,7 @@ header{
     height: 80px;
     background-color: #eaeaea;
 }
+
 /* Utilities */
 
 .my-border{
@@ -36,11 +37,6 @@ header{
 
 
 /* Left Side */
-
-#header-left{
-    height: 80px;
-    background-color: #eaeaea;
-}
 
 #notifications{
     height: 80px;
@@ -69,6 +65,7 @@ header{
 
 p{
     font-size: 0.7rem;
+    margin: 0;
 }
 
 
