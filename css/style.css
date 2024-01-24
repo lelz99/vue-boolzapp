@@ -8,10 +8,9 @@
     align-items: center;
 }
 
-
 img{
     width: 50px;
-    border-radius: 25px;
+    border-radius: 50%;
     border: 0;
     display: block;
     background-color: black;
@@ -29,6 +28,10 @@ li{
     margin: 0 10px;
 }
 
+i {
+    cursor: pointer;
+}
+
 li > i{
     color: #b1b1b1;
 }
@@ -38,27 +41,64 @@ header{
     background-color: #eaeaea;
 }
 
-/* Left Side */
 
+
+/* Left Side */
 #notifications{
     height: 80px;
     background-color: #8edafc;
 }
 
+#notifications div:first-child{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 5px;
+    background-color: white;
+    position: relative;
+}
+
+#notifications i{
+    color: #8edafc;
+    position: absolute;
+    bottom: 50%;
+    left: 20%;
+}
+
+#notifications div:last-child h5{
+    font-size: 1rem;
+    margin: 0;
+}
+
+#notifications div:last-child p{
+    font-size: 0.9rem;
+    margin: 0;
+    color: #6c757d;
+    text-decoration: underline;
+}
+
+
+/* Search */
 #search-bar{
     height: 50px;
     background-color: #fafafa;
 }
 
+#search-bar > input::placeholder{
+    font-size: 0.8rem;
+    padding-left: 30px;
+    color: #6c757d;
+}
+
+
+/* Chat */
 #chat{
     height: calc(90vh - 210px);
     background-color: white;
     overflow-y: scroll;
 }
 
-
 /* Right Side */
-
 .right-side header{
     height: 80px;
     background-color: #eaeaea;
@@ -70,6 +110,7 @@ header{
 }
 
 
+
 /* Section Conversartion */
 #conversation-box{
     height: calc(90vh - 150px);
@@ -77,6 +118,7 @@ header{
     overflow-y: scroll;
 
 }
+
 
 
 /* Section Send */
