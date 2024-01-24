@@ -30,7 +30,7 @@
                 <!-- Left Header -->
                 <header class="d-flex justify-content-between p-2">
                     <div class="d-flex align-items-center">
-                        <img :src="`img/${user.avatar}`" alt="{{user.name}}">
+                        <img :src="`img/${user.avatar}`" :alt="user.name">
                         <h2 class="h6 m-0">{{user.name}}</h2>
                     </div>
                     <ul class="d-flex align-items-center ">
@@ -55,11 +55,16 @@
                 </section>
 
                 <!-- Chat -->
-                <section id="chat" class="">
+                <section id="chat" class="p-2">
                     <ul>
-                        <li>lorem</li>
-                        <li>lorem</li>
-                        <li>lorem</li>
+                        <li v-for="contact in contacts" class="mb-3">
+                            <div class="d-flex">
+                                <img :src="`img/${contact.avatar}`" :alt="contact.name">
+                                <div class="ms-3">
+                                    <h2 class="h6 m-0 mt-1">{{contact.name}}</h2>
+                                </div>
+                            </div>
+                        </li>
                     </ul>
                 </section>
             </div>
@@ -70,7 +75,7 @@
                 <!-- Right Header -->
                 <header class="d-flex justify-content-between p-2">
                     <div class="d-flex align-items-center">
-                        <img src="img/avatar_1.jpg" alt="{{user.name}}">
+                        <img src="img/avatar_1.jpg" alt="Michele">
                         <div>
                             <h2 class="h6 m-0">Michele</h2>
                             <p class="text-secondary">Utlimo accesso oggi alle: </p>
