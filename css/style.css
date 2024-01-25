@@ -43,7 +43,9 @@ header{
 
 
 
-/* Left Side */
+/* LEFT SIDE */
+
+/* Notifications */
 #notifications{
     height: 80px;
     background-color: #8edafc;
@@ -77,7 +79,6 @@ header{
     text-decoration: underline;
 }
 
-
 /* Search */
 #search-bar{
     height: 50px;
@@ -90,7 +91,6 @@ header{
     color: #6c757d;
 }
 
-
 /* Chat */
 #chat{
     height: calc(90vh - 210px);
@@ -98,7 +98,11 @@ header{
     overflow-y: scroll;
 }
 
-/* Right Side */
+
+
+/* RIGHT SIDE */
+
+/* Header */
 .right-side header{
     height: 80px;
     background-color: #eaeaea;
@@ -108,8 +112,6 @@ header{
     font-size: 0.8rem;
     margin: 0;
 }
-
-
 
 /* Section Conversation */
 #conversation-box{

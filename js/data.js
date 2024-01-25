@@ -1,37 +1,41 @@
-const user = {
-  name: 'Nome Utente',
-  avatar: 'avatar_io.jpg'
-}
-const contacts =  [
-  {
-    id: 1,
-    name: 'Michele',
-    avatar: 'avatar_1.jpg',
-    messages: [
-      {
-        id: 1,
-        date: '10/01/2020 15:30:55',
-        text: 'Hai portato a spasso il cane?',
-        status: 'sent'
-      },
-      {
-        id: 2,
-        date: '10/01/2020 15:50:00',
-        text: 'Ricordati di stendere i panni',
-        status: 'sent'
-      },
-      {
-        id: 3,
-        date: '10/01/2020 16:15:22',
-        text: 'Tutto fatto!',
-        status: 'received'
-      }
-    ],
+
+const data = {
+
+  user : {
+    name: 'Nome Utente',
+    avatar: '_io'
+  },
+
+  contacts : [
+    {
+      id: 1,
+      name: 'Michele',
+      avatar: '_1',
+      messages: [
+        {
+          id: 1,
+          date: '10/01/2020 15:30:55',
+          text: 'Hai portato a spasso il cane?',
+          status: 'sent'
+        },
+        {
+          id: 2,
+          date: '10/01/2020 15:50:00',
+          text: 'Ricordati di stendere i panni',
+          status: 'sent'
+        },
+        {
+          id: 3,
+          date: '10/01/2020 16:15:22',
+          text: 'Tutto fatto!',
+          status: 'received'
+        }
+      ],
   },
   {
     id: 2,
     name: 'Fabio',
-    avatar: 'avatar_2.jpg',
+    avatar: '_2',
     messages: [
       {
         id: 1,
@@ -56,7 +60,7 @@ const contacts =  [
   {
     id: 3,
     name: 'Samuele',
-    avatar: 'avatar_3.jpg',
+    avatar: '_3',
     messages: [
       {
         id: 1,
@@ -81,7 +85,7 @@ const contacts =  [
   {
     id: 4,
     name: 'Alessandro B.',
-    avatar: 'avatar_4.jpg',
+    avatar: '_4',
     messages: [
       {
         id: 1,
@@ -100,7 +104,7 @@ const contacts =  [
   {
     id: 5,
     name: 'Alessandro L.',
-    avatar: 'avatar_5.jpg',
+    avatar: '_5',
     messages: [
       {
         id: 1,
@@ -119,7 +123,7 @@ const contacts =  [
   {
     id: 6,
     name: 'Claudia',
-    avatar: 'avatar_6.jpg',
+    avatar: '_6',
     messages: [
       {
         id: 1,
@@ -144,7 +148,7 @@ const contacts =  [
   {
     id: 7,
     name: 'Federico',
-    avatar: 'avatar_7.jpg',
+    avatar: '_7',
     messages: [
       {
         id: 1,
@@ -163,7 +167,7 @@ const contacts =  [
   {
     id: 8,
     name: 'Davide',
-    avatar: 'avatar_8.jpg',
+    avatar: '_8',
     messages: [
       {
         id: 1,
@@ -182,7 +186,10 @@ const contacts =  [
         date: '10/01/2020 15:51:00',
         text: 'OK!!',
         status: 'received'
-      }
+      },
     ],
   }
-]
+],
+}
+
+const {user, contacts} = data

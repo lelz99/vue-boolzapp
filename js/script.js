@@ -5,6 +5,14 @@ const app = createApp({
             user,
             contacts,
         }
+    },
+    computed: {
+
+    },
+    methods: {
+        getAvatarUrl({avatar}) {
+            return `img/avatar${avatar}.jpg`
+        },
     }
 })
 

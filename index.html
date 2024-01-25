@@ -24,13 +24,13 @@
     <div id="root">
         <div class="container row">
 
-            <!-- Left Side -->
+            <!-- LEFT SIDE -->
             <div class="left-side col-4 border-end border-primary p-0">
 
                 <!-- Left Header -->
                 <header class="d-flex justify-content-between p-2">
                     <div class="d-flex align-items-center">
-                        <img :src="`img/${user.avatar}`" :alt="user.name">
+                        <img :src="getAvatarUrl(user)" :alt="user.name">
                         <h2 class="h6 m-0">{{user.name}}</h2>
                     </div>
                     <ul class="d-flex align-items-center ">
@@ -59,7 +59,7 @@
                     <ul>
                         <li v-for="contact in contacts" class="mb-3">
                             <div class="d-flex">
-                                <img :src="`img/${contact.avatar}`" :alt="contact.name">
+                                <img :src="getAvatarUrl(contact)" :alt="contact.name">
                                 <div class="ms-3">
                                     <h2 class="h6 m-0 mt-1">{{contact.name}}</h2>
                                 </div>
@@ -69,13 +69,15 @@
                 </section>
             </div>
 
-            <!-- Right Side-->
+
+
+            <!-- RIGHT SIDE-->
             <div class="right-side col-8 p-0">
 
                 <!-- Right Header -->
                 <header class="d-flex justify-content-between p-2">
                     <div class="d-flex align-items-center">
-                        <img src="img/avatar_1.jpg" alt="Michele">
+                        <img :src="getAvatarUrl" alt="Michele">
                         <div>
                             <h2 class="h6 m-0">Michele</h2>
                             <p class="text-secondary">Utlimo accesso oggi alle: </p>
@@ -91,13 +93,8 @@
                 <!-- Conversation -->
                 <section id="conversation-box">
                     <div class="container-message-box">
-                        <p class="sent"><span>ciao</span></p>
-                        <p class="received"><span>ciao</span></p>
-                        <p class="received"><span>ciao</span></p>
-                        <p class="sent"><span>ciao</span></p>
-                        <p class="received"><span>ciao</span></p>
-                        <p class="sent"><span>ciao</span></p>
-                        <p class="sent"><span>ciao</span></p>
+                        <p class="sent"><span >ciao</span></p>
+                        <p class="received"><span >ciao</span></p>
                     </div>
                 </section>
 
