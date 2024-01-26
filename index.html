@@ -99,11 +99,11 @@
 
                 <!-- Send Message -->
                 <section id="send-message" class="d-flex">
-                    <form class="d-flex align-items-center flex-grow-1">
+                    <div class="d-flex align-items-center flex-grow-1">
                         <i class="fa-regular fa-face-smile"></i>
-                        <input class="form-control" placeholder="Scrivi un messaggio">
+                        <input v-model.trim="newMessageText" @keyup.enter="sendMessage" class="form-control" placeholder="Scrivi un messaggio">
                         <i class="fa-solid fa-microphone"></i>
-                    </form>
+                    </div>
                 </section>
             </div>
         </div>

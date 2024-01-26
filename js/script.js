@@ -5,6 +5,7 @@ const app = createApp({
             user,
             contacts,
             currentId: 1,
+            newMessageText: '',
         }
     },
     computed: {
@@ -22,6 +23,29 @@ const app = createApp({
         setCurrentId(id){
             this.currentId = id
             console.log(id)
+        },
+        sendMessage(){
+            if(!this.newMessageText) return
+
+            const newMessage = {
+                id: new Date().toISOString(),
+                date: 'data da inserire...',
+                status: 'sent',
+                text: this.newMessageText,
+            }
+
+            this.currentChat.push(newMessage)
+            this.newMessageText = ''
+
+            setTimeout(() => {
+                const newMessage = {
+                    id: new Date().toISOString(),
+                    date: 'data da inserire...',
+                    status: 'received',
+                    text: 'ok',
+                }
+                this.currentChat.push(newMessage)
+            }, 1000)
         },
     }
 })
