@@ -22,7 +22,7 @@
 </head>
 <body>
     <div id="root">
-        <div class="container row">
+        <div class="row container">
 
             <!-- LEFT SIDE -->
             <div class="left-side col-4 border-end border-primary p-0">
@@ -34,14 +34,14 @@
                         <h2 class="h6 m-0">{{user.name}}</h2>
                     </div>
                     <ul class="d-flex align-items-center ">
-                        <li><i class="fa-solid fa-magnifying-glass fa-xl"></i></li>
-                        <li><i class="fa-solid fa-message fa-xl"></i></li>
-                        <li><i class="fa-solid fa-ellipsis-vertical fa-xl"></i></li>
+                        <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                        <li><i class="fa-solid fa-message"></i></li>
+                        <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
                     </ul>
                 </header>
 
                 <!-- Notifications -->
-                <section id="notifications" class="d-flex align-items-center px-3">
+                <section id="notifications" class="d-flex align-items-center px-2">
                     <div class="me-2"><i class="fa-regular fa-bell-slash fa-xl"></i></div>
                     <div>
                         <h5>Ricevi notifiche di nuovi messaggi</h5>
@@ -50,8 +50,9 @@
                 </section>
 
                 <!-- Search -->
-                <section id="search-bar" class="p-2">
-                    <input v-model.trim="searchChat" type="text" class="form-control p-1" placeholder="Cerca o inizia una nuova chat">
+                <section id="search-bar">
+                    <input v-model.trim="searchChat" class="border border-secondary" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <i class="fa-solid fa-magnifying-glass"></i>
                 </section>
 
                 <!-- Chat -->
@@ -80,13 +81,13 @@
                         <img :src="getAvatarUrl(currentContact)" alt="Michele">
                         <div>
                             <h2 class="h6 m-0">{{currentContact.name}}</h2>
-                            <p class="text-secondary">Ultimo accesso oggi alle: </p>
+                            <p class="text-secondary">Ultimo accesso oggi alle: {{currentChat.date}}</p>
                         </div>
                     </div>
                     <ul class="d-flex align-items-center ">
-                        <li><i class="fa-solid fa-magnifying-glass fa-xl"></i></li>
-                        <li><i class="fa-solid fa-paperclip fa-xl"></i></li>
-                        <li><i class="fa-solid fa-ellipsis-vertical fa-xl"></i></li>
+                        <li><i class="fa-solid fa-magnifying-glass"></i></li>
+                        <li><i class="fa-solid fa-paperclip"></i></li>
+                        <li><i class="fa-solid fa-ellipsis-vertical"></i></li>
                     </ul>
                 </header>
 
@@ -98,11 +99,24 @@
                 </section>
 
                 <!-- Send Message -->
-                <section id="send-message" class="d-flex">
+                <!-- <section id="send-message" class="d-flex">
                     <div class="d-flex align-items-center flex-grow-1">
                         <i class="fa-regular fa-face-smile"></i>
                         <input v-model.trim="newMessageText" @keyup.enter="sendMessage" class="form-control" placeholder="Scrivi un messaggio">
                         <i class="fa-solid fa-microphone"></i>
+                    </div>
+                </section> -->
+                <section id="send-message">
+                    <div class="row h-100 w-100 align-items-center">
+                        <div class="col-1  text-center">
+                            <i class="fa-regular fa-face-smile"></i>
+                        </div>
+                        <div class="col-10 p-0">
+                            <input v-model.trim="newMessageText" @keyup.enter="sendMessage" class="w-100 border border-secondary" placeholder="Scrivi un messaggio">
+                        </div>
+                        <div class="col-1 p-0 text-center">
+                            <i class="fa-solid fa-microphone"></i>
+                        </div>
                     </div>
                 </section>
             </div>

@@ -1,7 +1,19 @@
+/* ROOT */
+:root{
+    --azure-color: #8edafc;
+    --acquamarina-color: #009688;
+    --darkgray--color: #b1b1b1;
+    --lightgray--color: #6c757d;
+    --white-primary-color: #eaeaea;
+    --white-secondary-color: #fafafa;
+    --white-tertiary-color: #f3eeea;
+    --green-color: #d5f9ba;
+}
+
 /* Generics */
 #root{
     height: 100vh;
-    background-image: linear-gradient(#009688 20%, #dcdbd3 0);
+    background-image: linear-gradient(var(--acquamarina-color) 20%, #dcdbd3 0);
 
     display: flex;
     justify-content: center;
@@ -11,11 +23,8 @@
 img{
     width: 50px;
     border-radius: 50%;
-    border: 0;
     display: block;
-    background-color: black;
     margin-right: 5px;
-
 }
 
 ul{
@@ -33,12 +42,13 @@ i {
 }
 
 li > i{
-    color: #b1b1b1;
+    color: var(--darkgray--color);
+    font-size: 1.3rem;
 }
 
 header{
     height: 80px;
-    background-color: #eaeaea;
+    background-color: var(--white-primary-color);
 }
 
 
@@ -48,23 +58,20 @@ header{
 /* Notifications */
 #notifications{
     height: 80px;
-    background-color: #8edafc;
+    background-color: var(--azure-color);
 }
 
 #notifications div:first-child{
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    margin-right: 5px;
-    background-color: white;
-    position: relative;
-}
 
-#notifications i{
-    color: #8edafc;
-    position: absolute;
-    bottom: 50%;
-    left: 20%;
+    background-color: white;
+    color: var(--azure-color);
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #notifications div:last-child h5{
@@ -75,20 +82,32 @@ header{
 #notifications div:last-child p{
     font-size: 0.9rem;
     margin: 0;
-    color: #6c757d;
+    color: var(--lightgray--color);
     text-decoration: underline;
 }
 
 /* Search */
 #search-bar{
     height: 50px;
-    background-color: #fafafa;
+    padding: 10px 20px;
+    background-color: var(--white-secondary-color);
+    position: relative;
 }
 
-#search-bar > input::placeholder{
-    font-size: 0.8rem;
-    padding-left: 30px;
-    color: #6c757d;
+#search-bar input{
+    width: 100%;
+    height: 100%;
+    font-size: 0.9rem;
+    padding-left: 35px;
+    border-radius: 10px;
+}
+
+#search-bar i{
+    position: absolute;
+    left: 30px;
+    top: 20px;
+    transform: translateY(-10%);
+    color: var(--lightgray--color);
 }
 
 
@@ -100,13 +119,12 @@ header{
 }
 
 
-
 /* RIGHT SIDE */
 
 /* Header */
 .right-side header{
     height: 80px;
-    background-color: #eaeaea;
+    background-color: var(--white-primary-color);
 }
 
 .right-side p{
@@ -134,7 +152,7 @@ header{
 }
 
 .sent p{
-    background-color: #d5f9ba;
+    background-color: var(--green-color);
 }
 
 .received{
@@ -150,21 +168,23 @@ p > span{
     display: block;
     text-align: end;
     font-size: 0.7rem;
-    color:#6c757d;
+    color:var(--lightgray--color);
 }
 
 /* Section Send */
 #send-message{
     height: 70px;
-    background-color: #f3eeea;
+    background-color: var(--white-tertiary-color);
+    padding: 10px;
 }
 
-.form-control{
-    padding: 12px
+div input{
+    padding: 8px 0;
+    border-radius: 10px;
+    padding-left: 10px;
 }
 
 #send-message i{
     font-size: 25px;
-    margin: 0 20px;
-    color: #6b7376;
+    color: var(--lightgray--color);
 }
