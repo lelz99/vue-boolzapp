@@ -51,13 +51,13 @@
 
                 <!-- Search -->
                 <section id="search-bar" class="p-2">
-                    <input type="text" class="form-control p-1" placeholder="Cerca o inizia una nuova chat">
+                    <input v-model.trim="searchChat" type="text" class="form-control p-1" placeholder="Cerca o inizia una nuova chat">
                 </section>
 
                 <!-- Chat -->
                 <section id="chat" class="p-2">
                     <ul>
-                        <li v-for="contact in contacts" @click="setCurrentId(contact.id)" role="button" class="mb-3">
+                        <li v-for="contact in filterChat" @click="setCurrentId(contact.id)" role="button" class="mb-3">
                             <div class="d-flex">
                                 <img :src="getAvatarUrl(contact)" :alt="contact.name">
                                 <div class="ms-3">

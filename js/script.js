@@ -6,6 +6,7 @@ const app = createApp({
             contacts,
             currentId: 1,
             newMessageText: '',
+            searchChat: '',
         }
     },
     computed: {
@@ -15,6 +16,19 @@ const app = createApp({
         currentChat(){
             return this.currentContact.messages
         },
+
+
+        //SEARCH CHAT
+        filterChat(){
+
+            searchText = this.searchChat.toLowerCase()
+
+            const filterContact = this.contacts.filter(contact =>
+                contact.name.toLowerCase().includes(searchText)
+            )
+
+            return filterContact
+        },
     },
     methods: {
         getAvatarUrl({avatar}) {
@@ -22,8 +36,10 @@ const app = createApp({
         },
         setCurrentId(id){
             this.currentId = id
-            console.log(id)
         },
+
+
+        //SEND MESSAGE AND REPLY
         sendMessage(){
             if(!this.newMessageText) return
 
