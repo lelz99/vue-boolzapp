@@ -57,7 +57,7 @@
                 <!-- Chat -->
                 <section id="chat" class="p-2">
                     <ul>
-                        <li v-for="contact in contacts" class="mb-3">
+                        <li v-for="contact in contacts" @click="setCurrentId(contact.id)" role="button" class="mb-3">
                             <div class="d-flex">
                                 <img :src="getAvatarUrl(contact)" :alt="contact.name">
                                 <div class="ms-3">
@@ -77,10 +77,10 @@
                 <!-- Right Header -->
                 <header class="d-flex justify-content-between p-2">
                     <div class="d-flex align-items-center">
-                        <img :src="getAvatarUrl" alt="Michele">
+                        <img :src="getAvatarUrl(currentContact)" alt="Michele">
                         <div>
-                            <h2 class="h6 m-0">Michele</h2>
-                            <p class="text-secondary">Utlimo accesso oggi alle: </p>
+                            <h2 class="h6 m-0">{{currentContact.name}}</h2>
+                            <p class="text-secondary">Ultimo accesso oggi alle: </p>
                         </div>
                     </div>
                     <ul class="d-flex align-items-center ">
@@ -92,9 +92,8 @@
 
                 <!-- Conversation -->
                 <section id="conversation-box">
-                    <div class="container-message-box">
-                        <p class="sent"><span >ciao</span></p>
-                        <p class="received"><span >ciao</span></p>
+                    <div v-for="message in currentContact.messages" :class="message.status">
+                        <p>{{message.text}}<span>{{message.date}}</span></p>
                     </div>
                 </section>
 
