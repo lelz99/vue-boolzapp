@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,7 +9,8 @@
     <!-- Fontawesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <!-- Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
 
@@ -20,6 +22,7 @@
     <script defer src="js/script.js"></script>
 
 </head>
+
 <body>
     <div id="root">
         <div class="row container">
@@ -51,25 +54,30 @@
 
                 <!-- Search -->
                 <section id="search-bar">
-                    <input v-model.trim="searchChat" class="border border-secondary" type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input v-model.trim="searchChat" class="border border-secondary" type="text"
+                        placeholder="Cerca o inizia una nuova chat">
                     <i class="fa-solid fa-magnifying-glass"></i>
                 </section>
 
                 <!-- Chat -->
                 <section id="chat" class="p-2">
                     <ul>
-                        <li v-for="contact in filterChat" @click="setCurrentId(contact.id)" role="button" class="mb-3">
+                        <li v-for="contact in filterChat" :key="contact.id" @click="setCurrentId(contact.id)"
+                            role="button" class="mb-3">
                             <div class="d-flex">
                                 <img :src="getAvatarUrl(contact)" :alt="contact.name">
                                 <div class="ms-3">
                                     <h2 class="h6 m-0 mt-1">{{contact.name}}</h2>
+                                    <p>{{lastMessDate.find(message => message.contactId ===
+                                        contact.id).lastMessageDate}}</p>
+                                    <p>{{lastMessDate.find(message => message.contactId ===
+                                        contact.id).lastMessageText}}</p>
                                 </div>
                             </div>
                         </li>
                     </ul>
                 </section>
             </div>
-
 
 
             <!-- RIGHT SIDE-->
@@ -81,7 +89,7 @@
                         <img :src="getAvatarUrl(currentContact)" alt="Michele">
                         <div>
                             <h2 class="h6 m-0">{{currentContact.name}}</h2>
-                            <p class="text-secondary">Ultimo accesso oggi alle: {{currentChat.date}}</p>
+                            <p class="text-secondary d-flex">Ultimo accesso: {{lastAccess}}</p>
                         </div>
                     </div>
                     <ul class="d-flex align-items-center ">
@@ -93,34 +101,33 @@
 
                 <!-- Conversation -->
                 <section id="conversation-box">
-                    <div v-for="message in currentContact.messages" :class="message.status">
-                        <p>{{message.text}}<span>{{message.date}}</span></p>
+                    <div v-for="message in currentContact.messages" :key="message.id" :class="message.status">
+                        <p>{{message.text}}
+                            <i class="fa-solid fa-chevron-down"></i>
+                            <span>{{message.date}}</span>
+                        </p>
                     </div>
                 </section>
 
                 <!-- Send Message -->
-                <!-- <section id="send-message" class="d-flex">
-                    <div class="d-flex align-items-center flex-grow-1">
-                        <i class="fa-regular fa-face-smile"></i>
-                        <input v-model.trim="newMessageText" @keyup.enter="sendMessage" class="form-control" placeholder="Scrivi un messaggio">
-                        <i class="fa-solid fa-microphone"></i>
-                    </div>
-                </section> -->
                 <section id="send-message">
                     <div class="row h-100 w-100 align-items-center">
                         <div class="col-1  text-center">
                             <i class="fa-regular fa-face-smile"></i>
                         </div>
                         <div class="col-10 p-0">
-                            <input v-model.trim="newMessageText" @keyup.enter="sendMessage" class="w-100 border border-secondary" placeholder="Scrivi un messaggio">
+                            <input v-model.trim="newMessageText" @keyup.enter="sendMessage"
+                                class="w-100 border border-secondary" placeholder="Scrivi un messaggio">
                         </div>
                         <div class="col-1 p-0 text-center">
                             <i class="fa-solid fa-microphone"></i>
                         </div>
                     </div>
                 </section>
+
             </div>
         </div>
     </div>
 </body>
+
 </html>

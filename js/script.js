@@ -1,25 +1,42 @@
 const { createApp } = Vue
 const app = createApp({
     data() {
-        return{
+        return {
             user,
             contacts,
-            currentId: 1,
+            currentId: null,
             newMessageText: '',
             searchChat: '',
         }
     },
     computed: {
-        currentContact(){
+
+        currentContact() {
             return this.contacts.find(contact => contact.id === this.currentId)
         },
-        currentChat(){
+
+        currentChat() {
             return this.currentContact.messages
         },
 
+        lastMessDate() {
+            return this.contacts.map(contact => {
+                const lastMessage = contact.messages[contact.messages.length - 1];
+                return {
+                    contactId: contact.id,
+                    lastMessageText: lastMessage.text,
+                    lastMessageDate: lastMessage.date
+                };
+            });
+        },
 
-        //SEARCH CHAT
-        filterChat(){
+        lastAccess() {
+            console.log(this.currentChat[this.currentChat.length - 1].date)
+            return this.currentChat[this.currentChat.length - 1].date;
+        },
+
+        // SEARCH CHAT
+        filterChat() {
 
             searchText = this.searchChat.toLowerCase()
 
@@ -29,41 +46,52 @@ const app = createApp({
 
             return filterContact
         },
+
     },
     methods: {
-        getAvatarUrl({avatar}) {
+
+        getAvatarUrl({ avatar }) {
             return `img/avatar${avatar}.jpg`
         },
-        setCurrentId(id){
+
+        setCurrentId(id) {
             this.currentId = id
         },
 
-
-        //SEND MESSAGE AND REPLY
-        sendMessage(){
-            if(!this.newMessageText) return
-
+        addMessage(status, text) {
             const newMessage = {
                 id: new Date().toISOString(),
-                date: 'data da inserire...',
-                status: 'sent',
-                text: this.newMessageText,
+                date: new Date().toLocaleString(),
+                status,
+                text
             }
 
             this.currentChat.push(newMessage)
+        },
+
+        //SEND MESSAGE AND REPLY
+        sendMessage() {
+            if (!this.newMessageText) return
+
+            this.addMessage('sent', this.newMessageText)
             this.newMessageText = ''
 
             setTimeout(() => {
-                const newMessage = {
-                    id: new Date().toISOString(),
-                    date: 'data da inserire...',
-                    status: 'received',
-                    text: 'ok',
-                }
-                this.currentChat.push(newMessage)
+                this.addMessage('received', 'ok')
             }, 1000)
         },
-    }
+
+        // Deleted messagee
+        deleteTask(id) {
+            const newTasks = this.tasks.filter(task => id !== task.id)
+            this.tasks = newTasks
+        },
+    },
+
+    created() {
+
+        this.currentId = this.contacts[0].id
+    },
 })
 
 app.mount('#root')
