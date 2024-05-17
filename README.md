@@ -1,4 +1,6 @@
 # InstantChat App
+![screen dell'app](screen/screenshot-boolzap.png)
+
 
 Applicazione web per la messaggistica istantanea sviluppata come esercizio durante il corso Boolean utilizzando Vue.js e ispirata a WhatsApp.
 
@@ -15,4 +17,7 @@ InstantChat ti consente di comunicare istantaneamente con i tuoi contatti, con u
 - Aggiornamento dell'ultimo accesso del contatto.
 
 ## Tecnologie Utilizzate
-È stato utilizzato Vue.js come framework JavaScript per lo sviluppo dell'applicazione. Integrato tramite CDN e senza l'uso di componenti.
+È stato utilizzato <a href="https://vuejs.org/">![Vue.js](https://img.shields.io/badge/Vue.js-3.0.0-green.svg)</a> come framework JavaScript per lo sviluppo dell'applicazione. Integrato tramite CDN e senza l'uso di componenti.
+
+## Link
+https://lelz99.github.io/vue-boolzapp/
